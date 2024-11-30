@@ -1,0 +1,100 @@
+/* Estilos para el carrito de compras */
+.cart-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 70vh; /* Limita la altura del contenedor para que no ocupe toda la pantalla */
+    overflow-y: auto; /* Habilita el scroll vertical si el contenido es demasiado largo */
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    flex-wrap: wrap; /* Asegura que los elementos no se desborden en pantallas más pequeñas */
+}
+/* Estilos para permitir scroll en el contenedor de los productos en el carrito */
+.cart-items-scroll {
+    max-height: 400px; /* Ajusta la altura según el diseño */
+    overflow-y: auto;  /* Habilita el desplazamiento vertical */
+    padding-right: 10px; /* Para evitar que el scroll se superponga con los bordes */
+}
+
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Evita que la imagen se reduzca demasiado */
+}
+
+/* Mobile - Dispositivos pequeños (hasta 768px) */
+@media (max-width: 768px) {
+    .cart-grid {
+        max-width: 100%; /* El carrito ocupará todo el ancho disponible */
+        padding: 15px;
+    }
+
+    .cart-item {
+        flex-direction: column; /* Colocar los elementos verticalmente */
+        align-items: flex-start; /* Alinear los elementos hacia la izquierda */
+        padding: 15px; /* Más espacio en los items */
+    }
+
+    .cart-item img {
+        width: 100px; /* Aumentar el tamaño de la imagen en dispositivos móviles */
+        height: 100px;
+    }
+
+    .cart-item .product-details {
+        font-size: 0.9em; /* Reducir un poco el tamaño de la fuente en móviles */
+    }
+}
+
+/* Tablet - Dispositivos medianos (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cart-grid {
+        max-width: 90%; /* Reducir un poco el ancho del carrito */
+        padding: 20px;
+    }
+
+    .cart-item {
+        flex-direction: row; /* Devolver los elementos a la disposición horizontal */
+        align-items: center; /* Alinear los elementos al centro */
+    }
+
+    .cart-item img {
+        width: 90px; 
+        height: 90px;
+    }
+
+    .cart-item .product-details {
+        font-size: 1em;
+    }
+}
+
+/* Desktop - Dispositivos grandes (a partir de 1025px) */
+@media (min-width: 1025px) {
+    .cart-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* Mostrar 3 productos por fila en escritorio */
+        max-width: 900px; 
+        padding: 30px;
+    }
+
+    .cart-item img {
+        width: 100px; 
+        height: 100px;
+    }
+}

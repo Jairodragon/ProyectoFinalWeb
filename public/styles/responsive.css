@@ -1,0 +1,40 @@
+/* Responsive Design */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Solo una columna */
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .banner-content h1 {
+        font-size: 2.2em;
+    }
+
+    .banner-content p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 2 columnas en tablet */
+    }
+
+    .banner-content h1 {
+        font-size: 2.5em;
+    }
+
+    .header-container nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

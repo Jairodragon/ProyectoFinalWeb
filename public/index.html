@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Mascotas</title>
+    <!-- Archivos CSS separados -->
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/banner.css">
+    <link rel="stylesheet" href="styles/product.css">
+    <link rel="stylesheet" href="styles/modals.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1 class="colorstitle">Tienda de Mascotas</h1>
+            <nav>
+                <!-- Menú de navegación -->
+                <button onclick="loadProducts()">Inicio</button>
+                <button id="categories-btn" onclick="window.location.href='categories.html'">Categorías</button> <!-- Botón de Categorías -->
+                <button id="pedidos-btn" onclick="window.location.href='HistorialPedidos.html'">Mis Pedidos</button>
+                <button id="cart-btn" onclick="openCartModal()">🛒</button>
+                <button id="login-btn" onclick="openLoginModal()">Acceder</button>
+                <button id="logout-btn" class="hidden" onclick="confirmLogout()">Cerrar Sesión</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="banner-content">
+            <img src="images/producto/logo.png" alt="Logo Tienda de Mascotas" class="logo">
+            <h1>¡Bienvenido a Tienda de Mascotas!</h1>
+            <p>Encuentra todo lo que necesitas para cuidar, alimentar y consentir a tu mejor amigo. Calidad y cariño para tu mascota.</p>
+        </div>
+    </section>
+
+    <!-- Main Section con productos destacados -->
+    <main>
+        <h2>Productos Destacados</h2>
+        <div id="products" class="product-grid" aria-live="polite">
+            <!-- Los productos se cargarán aquí mediante JavaScript -->
+        </div>
+    </main>
+
+    <!-- Contenedor de notificaciones -->
+    <div id="notification" class="hidden"></div>
+
+    <!-- Modals -->
+
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Ingrese su nombre de usuario" aria-label="Nombre de usuario">
+            <input type="password" id="password" placeholder="Ingrese su contraseña" aria-label="Contraseña">
+            <button onclick="login()">Ingresar</button>
+            <p>¿No tienes cuenta? <a href="#" onclick="openRegisterModal()">Registrarse</a></p>
+        </div>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div id="register-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeRegisterModal()">&times;</span>
+            <h2>Registro</h2>
+            <input type="text" id="new-fullname" placeholder="Nombre Completo" aria-label="Nombre Completo">
+            <input type="text" id="new-username" placeholder="Nombre de usuario" aria-label="Nombre de usuario">
+            <input type="email" id="new-email" placeholder="Correo Electrónico" aria-label="Correo Electrónico">
+            <input type="password" id="new-password" placeholder="Contraseña" aria-label="Contraseña">
+            <button onclick="register()">Registrar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación para Cerrar Sesión -->
+    <div id="logout-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>¿Estás seguro de que deseas cerrar sesión?</h3>
+            <button onclick="logout()">Sí</button>
+            <button onclick="closeLogoutModal()">No</button>
+        </div>
+    </div>
+
+    <!-- Modal de Detalles de Producto -->
+    <div id="product-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeProductModal()">&times;</span>
+            <img id="product-modal-image" alt="Producto">
+            <h3 id="product-modal-title"></h3>
+            <p id="product-modal-description"></p>
+            <p id="product-modal-price"></p>
+            <label for="product-quantity">Cantidad:</label>
+            <input type="number" id="product-quantity" value="1" min="1">
+            <button onclick="addToCart()">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <!-- Modal del Carrito -->
+    <div id="cart-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCartModal()">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <!-- Contenedor con scroll para los productos del carrito -->
+            <div id="cart-items" class="cart-items-scroll"></div> <!-- Aquí se cargan los productos del carrito -->
+            <p id="cart-total"></p>
+            <button onclick="confirmCart()">Confirmar Compra</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/product.js"></script>
+    <script type="module" src="js/cart.js"></script>
+    <script type="module" src="js/perfil.js"></script>
+</body>
+</html>

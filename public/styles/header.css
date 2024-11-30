@@ -1,0 +1,167 @@
+/* Header Styles */
+.header-container {
+    background-color: #2c3e50; /* Color oscuro */
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap; /* Permite que los elementos se acomoden cuando sea necesario */
+}
+
+.header-container h1 {
+    font-size: 28px;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header-container nav {
+    display: flex;
+    gap: 15px;
+}
+
+header input {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 200px; /* Definir un ancho para la barra de búsqueda */
+}
+
+button {
+    background-color: #3498db; /* Azul para los botones */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Logo */
+.logo {
+    height: 60px;
+    width: auto;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+.colorstitle{
+    color: #ccc;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px; /* Reducir padding en móviles */
+    }
+
+    .header-container h1 {
+        font-size: 24px; /* Reducir tamaño de título en móviles */
+        margin-bottom: 10px;
+    }
+
+    /* Acomoda la barra de navegación en columna en dispositivos pequeños */
+    .header-container nav {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    /* Ajustar el tamaño de la barra de búsqueda en móviles */
+    header input {
+        width: 100%; /* Barra de búsqueda ocupa todo el ancho disponible */
+        margin-bottom: 10px;
+    }
+
+    /* Ajustar tamaño de los botones en móviles */
+    button {
+        width: 100%; /* Hacer que los botones ocupen todo el ancho disponible */
+        padding: 12px;
+        font-size: 14px; /* Reducir tamaño de fuente de los botones */
+    }
+
+    /* Asegurarse de que el logo sea más pequeño en móviles */
+    .logo {
+        height: 45px; /* Reduce la altura aún más en pantallas muy pequeñas */
+        margin-right: 0;
+    }
+}
+
+/* Mobile very small (dispositivos pequeños) */
+@media (max-width: 320px) {
+    .logo {
+        height: 40px; /* Reduce aún más el logo en pantallas pequeñas */
+    }
+
+    header input {
+        font-size: 14px; /* Reducir el tamaño de la fuente en la barra de búsqueda */
+    }
+
+    button {
+        font-size: 12px; /* Reducir el tamaño de los botones */
+    }
+}
+
+/* Tablet (entre 768px y 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-container h1 {
+        font-size: 26px; /* Ajuste de tamaño para pantallas de tablet */
+    }
+
+    .header-container nav {
+        gap: 15px; /* Espaciado entre los elementos de navegación */
+    }
+
+    header input {
+        width: 180px; /* Ajustar el ancho de la barra de búsqueda */
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+
+    .logo {
+        height: 55px;
+    }
+}
+
+/* Desktop (mayores de 1024px) */
+@media (min-width: 1025px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 40px; /* Aumentar padding en pantallas grandes */
+    }
+
+    .header-container h1 {
+        font-size: 28px; /* Título de tamaño adecuado para pantallas grandes */
+    }
+
+    header input {
+        width: 250px; /* Barra de búsqueda más grande */
+    }
+
+    button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .logo {
+        height: 60px;
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Pedidos</title>
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/banner.css">
+    <link rel="stylesheet" href="styles/product.css">
+    <link rel="stylesheet" href="styles/modals.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/pedidos.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1>Tienda de Mascotas</h1>
+            <nav>
+                <button onclick="window.location.href='/'">Inicio</button>
+                <button id="pedidos-btn" onclick="window.location.href='HistorialPedidos.html'">Mis Pedidos</button>
+                <button id="cart-btn" onclick="openCartModal()">🛒</button>
+                <button id="login-btn" onclick="openLoginModal()">Acceder</button>
+                <button id="logout-btn" class="hidden" onclick="confirmLogout()">Cerrar Sesión</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mis Pedidos -->
+    <main>
+        <h2>Mis Pedidos</h2>
+        <div id="pedidos-list" class="pedidos-list">
+            <!-- Los pedidos se cargarán aquí -->
+        </div>
+    </main>
+
+    <!-- Modal de Detalles del Pedido -->
+    <div id="pedido-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePedidoModal()">&times;</span>
+            <h3>Detalles del Pedido</h3>
+            <div id="pedido-productos"></div>
+            <p id="pedido-total"></p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/HistorialPedidos.js"></script>
+</body>
+</html>

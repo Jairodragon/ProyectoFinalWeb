@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Pedido</title>
+    <!-- Archivos CSS -->
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    <link rel="stylesheet" href="styles/order.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1>Registrar Pedido</h1>
+            <nav>
+                <button onclick="window.location.href='index.html'">Inicio</button>
+                <button id="logout-btn" onclick="confirmLogout()">Cerrar Sesión</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="order-main">
+        <!-- Formulario de Pedido -->
+        <section class="order-form">
+            <h2>Datos de Envío</h2>
+            <form id="order-form">
+                <label for="address">Dirección de calle:</label>
+                <input type="text" id="address" placeholder="Número de la casa y nombre de la calle" required>
+                
+                <label for="country">País:</label>
+                <input type="text" id="country" placeholder="Ingrese su país" required>
+                
+                <label for="city">Población:</label>
+                <input type="text" id="city" placeholder="Ingrese su población" required>
+                
+                <label for="department">Departamento:</label>
+                <select id="department" required>
+                    <option value="" disabled selected>Seleccione</option>
+                    <option value="Santa Cruz">Santa Cruz</option>
+                    <option value="La Paz">La Paz</option>
+                    <option value="Cochabamba">Cochabamba</option>
+                </select>
+                
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" placeholder="Ingrese su teléfono" required>
+                
+                <label for="nit">NIT:</label>
+                <input type="text" id="nit" placeholder="Ingrese su NIT (opcional)">
+                
+                <button type="button" onclick="registerOrder()">Registrar Pedido</button>
+            </form>
+        </section>
+
+        <!-- Detalles del Carrito -->
+        <section class="order-summary">
+            <h2>Detalles del Carrito</h2>
+            <div id="cart-summary">
+                <!-- Productos del carrito se renderizan dinámicamente -->
+            </div>
+            <p class="total-price" id="total-price">Total: $0.00</p>
+        </section>
+    </main>
+
+    <!-- Modal de Autenticación -->
+    <div id="auth-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            <div id="auth-forms">
+                <!-- Formulario de Inicio de Sesión -->
+                <form id="login-form">
+                    <h2>Iniciar Sesión</h2>
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" placeholder="Ingrese su nombre de usuario" required>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" placeholder="Ingrese su contraseña" required>
+                    <button type="button" onclick="login()">Iniciar Sesión</button>
+                    <p>¿No tienes cuenta? <a href="#" onclick="openRegisterModal()">Regístrate</a></p>
+                </form>
+                
+                <!-- Formulario de Registro -->
+                <form id="register-form" class="hidden">
+                    <h2>Registrarse</h2>
+                    <label for="new-username">Usuario:</label>
+                    <input type="text" id="new-username" placeholder="Crea tu nombre de usuario" required>
+                    <label for="new-password">Contraseña:</label>
+                    <input type="password" id="new-password" placeholder="Crea tu contraseña" required>
+                    <button type="button" onclick="register()">Registrar</button>
+                    <p>¿Ya tienes cuenta? <a href="#" onclick="openLoginModal()">Iniciar Sesión</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Tienda de Mascotas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="js/perfil.js"></script>
+    <script type="module" src="js/order.js"></script>
+</body>
+</html>

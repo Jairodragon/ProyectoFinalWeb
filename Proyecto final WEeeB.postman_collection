@@ -1,0 +1,1337 @@
+{
+	"info": {
+		"_postman_id": "b2c08e3c-77fe-4701-a6d2-cbc0643ebc15",
+		"name": "Proyecto final WEB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36484254"
+	},
+	"item": [
+		{
+			"name": "Carrito",
+			"item": [
+				{
+					"name": "Obtener el carrito de compras",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDkwOSwiZXhwIjoxNzMxMDAyMTA5fQ.R9xw6GboPC5nfqPoIpWGdMrgCpxLs-cJfDz1yoeqzNA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/carrito",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"carrito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "agregar producto al carrito",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDkwOSwiZXhwIjoxNzMxMDAyMTA5fQ.R9xw6GboPC5nfqPoIpWGdMrgCpxLs-cJfDz1yoeqzNA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"idProducto\": 2,\r\n    \"cantidad\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/carrito/agregar/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"carrito",
+								"agregar",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar la cantidad el producto en carrito",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDkwOSwiZXhwIjoxNzMxMDAyMTA5fQ.R9xw6GboPC5nfqPoIpWGdMrgCpxLs-cJfDz1yoeqzNA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidad\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/carrito/actualizar/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"carrito",
+								"actualizar",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar producto de un carrito de compras",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDkwOSwiZXhwIjoxNzMxMDAyMTA5fQ.R9xw6GboPC5nfqPoIpWGdMrgCpxLs-cJfDz1yoeqzNA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/carrito/eliminar/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"carrito",
+								"eliminar",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vaciar carrito de compras",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDkwOSwiZXhwIjoxNzMxMDAyMTA5fQ.R9xw6GboPC5nfqPoIpWGdMrgCpxLs-cJfDz1yoeqzNA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/carrito/vaciar",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"carrito",
+								"vaciar"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria producto",
+			"item": [
+				{
+					"name": "crear categoria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDkwOSwiZXhwIjoxNzMxMDAyMTA5fQ.R9xw6GboPC5nfqPoIpWGdMrgCpxLs-cJfDz1yoeqzNA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCategoria\": \"Carnes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/categoriaProducto",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"categoriaProducto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener todas las categorias",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDkwOSwiZXhwIjoxNzMxMDAyMTA5fQ.R9xw6GboPC5nfqPoIpWGdMrgCpxLs-cJfDz1yoeqzNA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/categoriaProducto/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"categoriaProducto",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener producto por id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDkwOSwiZXhwIjoxNzMxMDAyMTA5fQ.R9xw6GboPC5nfqPoIpWGdMrgCpxLs-cJfDz1yoeqzNA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/categoriaProducto/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"categoriaProducto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar categoria",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDkwOSwiZXhwIjoxNzMxMDAyMTA5fQ.R9xw6GboPC5nfqPoIpWGdMrgCpxLs-cJfDz1yoeqzNA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombreCategoria\": \"Computadoras\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/categoriaProducto/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"categoriaProducto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar una categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDkwOSwiZXhwIjoxNzMxMDAyMTA5fQ.R9xw6GboPC5nfqPoIpWGdMrgCpxLs-cJfDz1yoeqzNA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/categoriaProducto/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"categoriaProducto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventario",
+			"item": [
+				{
+					"name": "Traer todos los productos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDkwOSwiZXhwIjoxNzMxMDAyMTA5fQ.R9xw6GboPC5nfqPoIpWGdMrgCpxLs-cJfDz1yoeqzNA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/inventario",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"inventario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener productos por categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/inventario/categoria/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"inventario",
+								"categoria",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener detalles de un producto",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/inventario/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"inventario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear producto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombreProducto",
+									"value": "Coca cola",
+									"type": "text"
+								},
+								{
+									"key": "descripcionProducto",
+									"value": "es una soda",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "nivelStock",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "idCategoriaProducto",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "rutaImagen",
+									"type": "file",
+									"src": "/D:/Users/juand/Downloads/placeholder.jpg"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/inventario",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"inventario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar producto",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombreProducto",
+									"value": "Soda",
+									"type": "text"
+								},
+								{
+									"key": "descripcionProducto",
+									"value": "es una soda",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "nivelStock",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "idCategoriaProducto",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/D:/Users/juand/Downloads/firma antonio (1).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/inventario/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"inventario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar un producto",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/inventario/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"inventario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Miembro",
+			"item": [
+				{
+					"name": "Registrar miembro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombreCompleto\": \"Juan Perez\",\r\n  \"nombreUsuario\": \"juanda2\",\r\n  \"correoElectronico\": \"juanda2@example.com\",\r\n  \"contrasena\": \"password123\",\r\n  \"idUbicacion\": \"1\",\r\n  \"idTipoCuenta\": \"1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/miembro/registrar",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"miembro",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "iniciar sesion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombreUsuario\": \"juanda\",\r\n  \"contrasena\": \"password123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/miembro/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"miembro",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ver perfil",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/miembro/perfil",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"miembro",
+								"perfil"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ver miembro por id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/miembro/10",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"miembro",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar miembro",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombreCompleto\": \"Juan Perez Actualizado\",\r\n  \"contrasena\": \"newpassword123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/miembro/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"miembro",
+								"2"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar miembro",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/miembro/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"miembro",
+								"2"
+							],
+							"query": [
+								{
+									"key": "authorization",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "mis pedidos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/pedido/mios",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"pedido",
+								"mios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registrar pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"direccionEnvio\": \"123 Calle Falsa\",\r\n  \"ciudadEnvio\": \"Ciudad Ejemplo\",\r\n  \"paisEnvio\": \"País Ejemplo\",\r\n  \"codigoPostalEnvio\": \"12345\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/pedido",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener todos los pedidos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/pedido",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar el estado de un pedido (solo para administradores)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idEstadoPedido\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/pedido/6/estado",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"pedido",
+								"6",
+								"estado"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Producto Pedido",
+			"item": [
+				{
+					"name": "obtenerProductosDePedido",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/productoPedido/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"productoPedido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tipo Cuenta",
+			"item": [
+				{
+					"name": "crear tipo de cuenta",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreTipoCuenta\": \"administrador\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tipoCuenta",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tipoCuenta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los tipos de cuenta",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/tipoCuenta",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tipoCuenta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un tipo de cuenta por su ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/tipoCuenta/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tipoCuenta",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar un tipo de cuenta existente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreTipoCuenta\": \"Nuevo Nombre de Tipo de Cuenta\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tipoCuenta/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tipoCuenta",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un tipo de cuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/tipoCuenta/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tipoCuenta",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ubicacion",
+			"item": [
+				{
+					"name": "crear ubiacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"direccion\": \"Av Lujan\",\r\n    \"ciudad\": \"Santa Cruz\",\r\n    \"pais\": \"Bolivia\",\r\n    \"codigoPostal\": \"0000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/ubicacion",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"ubicacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todas las ubicaciones",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/ubicacion",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"ubicacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener una ubicación por su ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/ubicacion/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"ubicacion",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar una ubicación",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"direccion\": \"456 Calle Actualizada\",\r\n    \"ciudad\": \"Ciudad Actualizada\",\r\n    \"pais\": \"País Actualizado\",\r\n    \"codigoPostal\": \"67890\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/ubicacion/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"ubicacion",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar una ubicación",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/ubicacion/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"ubicacion",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "estado pedido",
+			"item": [
+				{
+					"name": "Obtener todos los estados de pedido",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/estadoPedido",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"estadoPedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear un nuevo estado de pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombreEstado\": \"Nombre del Estado\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/estadoPedido",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"estadoPedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un estado de pedido por ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/estadoPedido/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"estadoPedido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar un estado de pedido existente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombreEstado\": \"Nombre actualizado del Estado\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/estadoPedido/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"estadoPedido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un estado de pedido",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/estadoPedido/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"estadoPedido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener los productos de un pedido específico",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE1pZW1icm8iOjksIm5vbWJyZVVzdWFyaW8iOiJqdWFuZGEiLCJpZFRpcG9DdWVudGEiOjEsImlhdCI6MTczMDk5NDM4OSwiZXhwIjoxNzMxMDAxNTg5fQ.AXqd9gqQu4wD1lfWOzAirdksIJLHzcOUJPCg7HRljkk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/pedido/1/productos",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"pedido",
+								"1",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <!-- Archivos CSS -->
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    <link rel="stylesheet" href="styles/modals.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1>Carrito de Compras</h1>
+            <nav>
+                <button onclick="window.location.href='index.html'">Inicio</button>
+                <button id="login-btn" onclick="openLoginModal()">Acceder</button>
+                <button id="logout-btn" class="hidden" onclick="confirmLogout()">Cerrar Sesión</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Tu Carrito</h2>
+        <!-- Contenedor donde se mostrarán los productos del carrito -->
+       <!-- Contenedor donde se mostrarán los productos del carrito -->
+<div id="cart-container" class="cart-grid">
+    <!-- Los productos se cargarán dinámicamente mediante JavaScript -->
+</div>
+
+
+        <!-- Resumen del carrito -->
+        <div class="cart-summary">
+            <p id="cart-total">Total: $0.00</p>
+            <button id="confirm-cart-btn" onclick="confirmCart()">Confirmar Compra</button>
+        </div>
+    </main>
+
+    <!-- Modal de Formulario de Pedido -->
+    <div id="order-form-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeOrderFormModal()">&times;</span>
+            <h2>Registrar Pedido</h2>
+            <form id="order-form">
+                <!-- Dirección -->
+                <label for="address">Dirección de Entrega:</label>
+                <input type="text" id="address" placeholder="Ingrese su dirección" required>
+
+                <!-- País -->
+                <label for="country">País:</label>
+                <input type="text" id="country" placeholder="Ingrese su país" required>
+
+                <!-- Ciudad -->
+                <label for="city">Ciudad:</label>
+                <input type="text" id="city" placeholder="Ingrese su ciudad" required>
+
+                <!-- Departamento -->
+                <label for="department">Departamento:</label>
+                <select id="department" required>
+                    <option value="" disabled selected>Seleccione</option>
+                    <option value="Santa Cruz">Santa Cruz</option>
+                    <option value="La Paz">La Paz</option>
+                    <option value="Cochabamba">Cochabamba</option>
+                    <!-- Agregar más opciones si es necesario -->
+                </select>
+
+                <!-- Teléfono -->
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" placeholder="Ingrese su teléfono" required>
+
+                <!-- NIT -->
+                <label for="nit">NIT:</label>
+                <input type="text" id="nit" placeholder="Ingrese su NIT (opcional)">
+
+                <!-- Botón de Registrar Pedido -->
+                <button type="button" onclick="registerOrder()">Registrar Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <input type="text" id="username" placeholder="Usuario" aria-label="Usuario">
+            <input type="password" id="password" placeholder="Contraseña" aria-label="Contraseña">
+            <button onclick="login()">Ingresar</button>
+            <p>¿No tienes cuenta? <a href="#" onclick="openRegisterModal()">Registrarse</a></p>
+        </div>
+    </div>
+
+    <!-- Contenedor de Notificaciones -->
+    <div id="notification" class="hidden"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/cart.js"></script>
+    <script type="module" src="js/perfil.js"></script>
+    
+</body>
+</html>

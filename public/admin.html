@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1>Panel de Administración</h1>
+            <nav>
+                <button onclick="window.location.href='/'">Tienda</button>
+                <button id="logout-btn" onclick="logout()">Cerrar Sesión</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Sección de Productos -->
+        <section class="admin-section">
+            <h2>Gestión de Productos</h2>
+            <button onclick="abrirModalCrearProducto()">Crear Producto</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="productos-list">
+                    <!-- Productos cargados dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Sección de Pedidos -->
+        <section class="admin-section">
+            <h2>Gestión de Pedidos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fecha</th>
+                        <th>Total</th>
+                        <th>Cliente</th>
+                        <th>Productos</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="pedidos-list">
+                    <!-- Pedidos cargados dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Sección de Categorías -->
+        <section class="admin-section">
+            <h2>Gestión de Categorías</h2>
+            <button onclick="abrirModalCrearCategoria()">Crear Categoría</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="categorias-list">
+                    <!-- Categorías cargadas dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Sección de Administradores -->
+        <section class="admin-section">
+            <h2>Gestión de Administradores</h2>
+            <button onclick="abrirModalCrearAdministrador()">Crear Administrador</button> <!-- Botón para crear administrador -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre Completo</th>
+                        <th>Nombre de Usuario</th>
+                        <th>Correo Electrónico</th>
+                        <th>Ubicación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="administradores-list">
+                    <!-- Administradores cargados dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modal para Crear/Editar Productos -->
+    <div id="producto-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="producto-modal-title"></h3>
+            <form id="producto-form">
+                <input type="hidden" id="producto-id">
+
+                <label for="producto-nombre">Nombre:</label>
+                <input type="text" id="producto-nombre" required>
+
+                <label for="producto-precio">Precio:</label>
+                <input type="number" id="producto-precio" step="0.01" required>
+
+                <label for="producto-descripcion">Descripción:</label>
+                <textarea id="producto-descripcion" required></textarea>
+
+                <label for="producto-nivelstock">Nivel de Stock:</label>
+                <input type="number" id="producto-nivelstock" required>
+
+                <label for="producto-categoria">Categoría:</label>
+                <select id="producto-categoria" required>
+                    <option value="" disabled selected>Seleccione una categoría</option>
+                </select>
+
+                <label for="producto-imagen">Imagen:</label>
+                <input type="file" id="producto-imagen" accept="image/*">
+
+                <button type="button" onclick="guardarProducto()">Guardar</button>
+                <button type="button" onclick="cerrarModalProducto()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Crear/Editar Categorías -->
+    <div id="categoria-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="categoria-modal-title"></h3>
+            <form id="categoria-form">
+                <input type="hidden" id="categoria-id">
+
+                <label for="categoria-nombre">Nombre:</label>
+                <input type="text" id="categoria-nombre" placeholder="Nombre de la categoría" required>
+
+                <button type="button" onclick="guardarCategoria()">Guardar</button>
+                <button type="button" onclick="cerrarModalCategoria()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Crear/Editar Administradores -->
+    <div id="administrador-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="administrador-modal-title">Editar Administrador</h3>
+            <form id="administrador-form">
+                <input type="hidden" id="administrador-id">
+
+                <label for="administrador-nombre">Nombre Completo:</label>
+                <input type="text" id="administrador-nombre" required>
+
+                <label for="administrador-usuario">Nombre de Usuario:</label>
+                <input type="text" id="administrador-usuario" required>
+
+                <label for="administrador-correo">Correo Electrónico:</label>
+                <input type="email" id="administrador-correo" required>
+
+                <label for="administrador-ubicacion">Ubicación:</label>
+                <input type="text" id="administrador-ubicacion" required>
+
+                <label for="administrador-contrasena">Contraseña:</label>
+            <input type="password" id="administrador-contrasena" placeholder="Ingrese la contraseña" required>
+
+
+                <button type="button" onclick="guardarAdministrador()">Guardar</button>
+                <button type="button" onclick="cerrarModalAdministrador()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/admin.js"></script>
+    <script type="module" src="js/categorias.js"></script>
+    <script type="module" src="js/administradores.js"></script>
+</body>
+</html>

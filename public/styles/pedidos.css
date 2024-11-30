@@ -1,0 +1,289 @@
+/* Estilos generales para la página de pedidos */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Estilo del contenedor de los pedidos */
+.pedidos-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pedidos-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Tabla de pedidos */
+.pedidos-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.pedidos-table th,
+.pedidos-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.pedidos-table th {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.pedidos-table td {
+    background-color: #f9f9f9;
+}
+
+/* Estilo para cada fila de pedido */
+.pedidos-table tr:nth-child(even) td {
+    background-color: #f1f1f1;
+}
+
+.pedidos-table tr:hover {
+    background-color: #eaeaea;
+}
+
+.pedidos-table .pedido-status {
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.pedido-status.pendiente {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.pedido-status.enviado {
+    background-color: #16a085;
+    color: #fff;
+}
+
+.pedido-status.entregado {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.pedido-status.cancelado {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* Estilo de los botones */
+.pedido-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.pedido-actions button {
+    padding: 8px 20px;
+    border: none;
+    background-color: #2980b9;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pedido-actions button:hover {
+    background-color: #3498db;
+}
+
+/* Modal de detalles de pedido */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 60%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    margin: 0;
+}
+
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-body {
+    font-size: 16px;
+}
+
+.modal-body p {
+    margin: 10px 0;
+}
+
+/* Estilos de los detalles del pedido */
+.pedido-detalle {
+    margin-bottom: 15px;
+}
+
+.pedido-detalle label {
+    font-weight: bold;
+}
+
+.pedido-detalle span {
+    display: inline-block;
+    margin-left: 10px;
+    color: #555;
+}
+
+.modal-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-footer button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-footer button:hover {
+    background-color: #c0392b;
+}
+
+/* Estilos de la paginación (si es necesario) */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.paginacion button {
+    padding: 10px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.paginacion button:hover {
+    background-color: #2980b9;
+}
+
+/* MOBILE STYLES */
+
+/* Disposición para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+
+    /* Hacer que el contenedor ocupe el 100% del ancho */
+    .pedidos-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Hacer que el texto del encabezado sea más pequeño */
+    header h1 {
+        font-size: 20px;
+    }
+
+    /* La tabla de pedidos debe permitir el desplazamiento horizontal en pantallas pequeñas */
+    .pedidos-table {
+        overflow-x: auto;
+        display: block;
+    }
+
+    .pedidos-table th,
+    .pedidos-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    /* Asegurar que el modal ocupe un porcentaje mayor de la pantalla */
+    .modal-content {
+        width: 90%;
+    }
+
+    /* Los botones de acciones deben ser más grandes para facilitar su uso en móviles */
+    .pedido-actions button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .paginacion button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* TABLET AND DESKTOP STYLES */
+
+/* Estilos para pantallas más grandes (tabletas y escritorios) */
+@media (min-width: 1024px) {
+
+    /* Modificar la tabla para que no tenga desplazamiento horizontal en pantallas grandes */
+    .pedidos-table {
+        overflow-x: visible;
+    }
+
+    /* Los botones de acción deben mantener su tamaño estándar */
+    .pedido-actions button {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+
+    .paginacion button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .modal-content {
+        width: 60%;
+    }
+}

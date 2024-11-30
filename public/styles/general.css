@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Fuentes más modernas */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px; /* Tamaño base de fuente */
+}
+
+/* Estilos para los encabezados */
+h1 {
+    margin: 0;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 0;
+    color: #0e0606;
+    font-weight: bold;
+}
+/* Botones de interacción */
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem; /* Tamaño de fuente más flexible */
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Inputs */
+input[type="text"], input[type="password"], input[type="number"], select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Contenedor de notificaciones */
+#notification {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 999; /* Asegurarse de que el contenedor esté siempre encima */
+}
+
+/* Clase oculta */
+.hidden {
+    display: none;
+}
+
+/* Modals */
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Botón de cierre de modal */
+.close-btn {
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    background: none;
+    border: none;
+}
+
+/* Animación de fade-in para el modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsivo --- */
+
+/* Móviles: Ajustar tamaño y disposición para pantallas pequeñas */
+@media (max-width: 600px) {
+    /* Ajustar el tamaño de los botones */
+    button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    /* Inputs más pequeños y márgenes ajustados */
+    input[type="text"], input[type="password"], input[type="number"], select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Ajustar el tamaño de los modales */
+    .modal-content {
+        width: 90%; /* Ajustar el ancho del modal en móviles */
+        padding: 20px;
+    }
+
+    /* Notificaciones más pequeñas */
+    #notification {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* Ajuste de la fuente en encabezados */
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tabletas: Ajustes para dispositivos de pantalla media (entre 601px y 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    button {
+        padding: 10px 18px;
+        font-size: 1rem;
+    }
+
+    /* Ajustes en inputs */
+    input[type="text"], input[type="password"], input[type="number"], select {
+        font-size: 15px;
+    }
+
+    .modal-content {
+        width: 80%; /* Modal ligeramente más pequeño */
+    }
+
+    #notification {
+        font-size: 15px;
+    }
+
+    h1, h2 {
+        font-size: 2rem; /* Títulos más grandes en tablets */
+    }
+}
+
+/* Escritorios: Ajustes para pantallas grandes (más de 1025px) */
+@media (min-width: 1025px) {
+    /* Ajustar tamaño de botones */
+    button {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+    }
+
+    /* Ajustes en inputs */
+    input[type="text"], input[type="password"], input[type="number"], select {
+        font-size: 16px;
+    }
+
+    .modal-content {
+        width: 40%; /* Modal con un tamaño apropiado en pantallas grandes */
+    }
+
+    #notification {
+        font-size: 16px;
+    }
+
+    h1, h2 {
+        font-size: 2.5rem; /* Títulos grandes en escritorios */
+    }
+}

@@ -1,0 +1,96 @@
+/* Modals */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: visible; /* Modal visible por defecto */
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Ocultar modales con la clase hidden */
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Contenido del Modal */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px; /* Asegura que el modal no sea demasiado grande */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-out;
+    overflow-y: auto; /* Para evitar el desbordamiento en contenido largo */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos del contenido del modal */
+.modal-content h3, .modal-content p {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.modal-content img {
+    width: 100%;  /* Asegura que la imagen ocupe el 100% del ancho disponible */
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Responsivo en pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 15px; /* Menos padding en móviles */
+        max-width: 90%; /* Modal ocupa un 90% del ancho de la pantalla */
+    }
+
+    .modal-content h3 {
+        font-size: 1.5rem; /* Reduce el tamaño del título */
+    }
+
+    .modal-content p {
+        font-size: 1rem; /* Reduce el tamaño del texto */
+    }
+
+    .modal-content img {
+        max-height: 200px; /* Reduce el tamaño de la imagen */
+    }
+}
+
+/* Responsivo en pantallas grandes (escritorios y tabletas grandes) */
+@media (min-width: 1024px) {
+    .modal-content {
+        max-width: 600px; /* Mantener el tamaño máximo en pantallas grandes */
+    }
+
+    .modal-content h3 {
+        font-size: 2rem; /* Aumenta el tamaño del título */
+    }
+
+    .modal-content p {
+        font-size: 1.2rem; /* Aumenta el tamaño del texto */
+    }
+}
